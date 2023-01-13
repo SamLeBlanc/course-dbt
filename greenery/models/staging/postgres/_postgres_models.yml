@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: stg_postgres__addresses
+    description: Addresses info for each users including address, zip, state, and country.
+  
+  - name: stg_postgres__events
+    description: Event info, for page visited/action by user
+
+  - name: stg_postgres__order_items
+    description: Items per order, using order and item ids
+  
+  - name: stg_postgres__orders
+    description: Order info for everything, ids for all other tables
+
+  - name: stg_postgres__products
+    description: Product info, including id, name, price, and inventory
+
+  - name: stg_postgres__promos
+    description: Promo info, including dicount size and promo status
+
+  - name: stg_postgres__users
+    description: User info, including contact info, address id, and date of user creation/update
+  
