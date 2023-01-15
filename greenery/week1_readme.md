@@ -10,13 +10,11 @@
 3. On average, how long does an order take from being placed to being delivered? 
 --ANSWER: 93.4 hours
 
-4. How many users have only made one purchase? Two purchases? Three+ purchases?
-
---ANSWER: 
-NUM_ORDERS	NUM_USERS
-1	          25
-2	          28
-3+	        71
+4. How many users have only made one purchase? Two purchases? Three+ purchases? --ANSWER: 
+- NUM_ORDERS	- NUM_USERS
+- 1	          - 25
+- 2	          - 28
+- 3+	        - 71
 
 5. On average, how many unique sessions do we have per hour?
 --ANSWER: 16.3 sessions/hour
