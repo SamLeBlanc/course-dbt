@@ -1,4 +1,4 @@
-* Code in [analyses/week1_short_answers.sql](https://github.com/SamLeBlanc/course-dbt/blob/main/greenery/analyses/week1_short_answers.sql)*
+** Code in [analyses/week1_short_answers.sql](https://github.com/SamLeBlanc/course-dbt/blob/main/greenery/analyses/week1_short_answers.sql) **
 
 
 1. How many users do we have?
