@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: fact_products
+    column: 
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+  - name: fact_product_sessions_daily

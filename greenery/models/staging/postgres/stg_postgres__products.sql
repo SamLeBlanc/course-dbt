@@ -5,9 +5,9 @@ with src as (
 , renamed_recast as (
     select 
         PRODUCT_ID
-        , NAME
-        , PRICE
-        , INVENTORY
+        , NAME as product_name
+        , PRICE as product_price
+        , INVENTORY as product_inventory
     from src
 )
 

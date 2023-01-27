@@ -6,17 +6,17 @@ with src as (
     select 
         ORDER_ID
         , USER_ID 
-        , PROMO_ID
+        , PROMO_ID as promo_desc
         , ADDRESS_ID
-        , CREATED_AT::timestampntz as created_at_utc
+        , CREATED_AT::timestampntz as order_created_at_utc
         , ORDER_COST
         , SHIPPING_COST
         , ORDER_TOTAL
         , TRACKING_ID
         , SHIPPING_SERVICE
-        , ESTIMATED_DELIVERY_AT::timestampntz as estimated_delivery_at_utc
-        , DELIVERED_AT::timestampntz as delivered_at_utc
-        , STATUS
+        , ESTIMATED_DELIVERY_AT::timestampntz as order_estimated_delivery_at_utc
+        , DELIVERED_AT::timestampntz as prder_delivered_at_utc
+        , STATUS as order_status
     from src
 )
 

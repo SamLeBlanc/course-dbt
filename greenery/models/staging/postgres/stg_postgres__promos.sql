@@ -4,7 +4,7 @@ with src as (
 
 , renamed_recast as (
     select 
-        PROMO_ID
+        PROMO_ID as promo_desc
         , DISCOUNT
         , STATUS
     from src

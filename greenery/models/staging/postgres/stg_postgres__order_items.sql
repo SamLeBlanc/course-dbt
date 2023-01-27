@@ -6,7 +6,7 @@ with src as (
     select 
         ORDER_ID
         , PRODUCT_ID
-        , QUANTITY
+        , QUANTITY::int as product_quantity
     from src
 )
 

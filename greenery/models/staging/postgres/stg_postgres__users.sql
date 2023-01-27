@@ -7,10 +7,10 @@ with src as (
         USER_ID
         , FIRST_NAME
         , LAST_NAME
-        , EMAIL
+        , EMAIL as user_email
         , PHONE_NUMBER
-        , CREATED_AT::timestampntz as created_at_utc
-        , UPDATED_AT::timestampntz as updated_at_utc
+        , CREATED_AT::timestampntz as user_created_at_utc
+        , UPDATED_AT::timestampntz as user_updated_at_utc
         , ADDRESS_ID
     from src
 )

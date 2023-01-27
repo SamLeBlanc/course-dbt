@@ -3,9 +3,42 @@ version: 2
 models:
   - name: stg_postgres__addresses
     description: Addresses info for each users including address, zip, state, and country.
-  
+    columns:
+      - name: street_address
+      - name: zipcode
+        tests: 
+          - not_null
+      - name: state
+        tests: 
+          - not_null
+      - name: country
+        tests: 
+          - not_null
+      - name: full_address
+
   - name: stg_postgres__events
     description: Event info, for page visited/action by user
+    columns:
+      - name: event_id
+        tests:
+          - not_null
+      - name: session_id
+        tests: 
+          - not_null
+      - name: user_id
+        tests: 
+          - not_null
+      - name: page_url
+        tests: 
+          - not_null
+      - name: created_at_utc
+        tests: 
+          - not_null
+      - name: event_type
+        tests: 
+          - not_null
+      - name: order_id
+      - name: product_id
 
   - name: stg_postgres__order_items
     description: Items per order, using order and item ids
