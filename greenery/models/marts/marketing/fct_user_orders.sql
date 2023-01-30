@@ -1,6 +1,5 @@
 with users as (
-    select *
-    from {{ ref ('stg_postgres__users') }}
+    select * from {{ ref ('stg_postgres__users') }}
 )
 , user_orders as (
     select 
@@ -22,17 +21,17 @@ with users as (
 )
 
 select
-    u.user_id
-    , o.orders is not null as is_buyer
-    , coalesce(o.orders, 0) >= 3 as is_frequent_buyer
-    , o.first_order_utc
-    , o.last_order_utc
-    , o.orders
-    , coalesce(o.spend_usd, 0) as spend_usd
-    , coalesce(p.distinct_products_purchased, 0) as distinct_products_purchased
-    , coalesce(p.items_purchased, 0) as items_purchased
-from users u
-left join user_orders o
-    on o.user_id = u.user_id
-left join products_purchased p
-    on p.user_id = u.user_id
+    users.user_id
+    , user_orders.orders is not null as is_buyer
+    , coalesce(user_orders.orders, 0) >= 3 as is_frequent_buyer
+    , user_orders.first_order_utc
+    , user_orders.last_order_utc
+    , user_orders.orders
+    , coalesce(user_orders.spend_usd, 0) as spend_usd
+    , coalesce(products_purchased.distinct_products_purchased, 0) as distinct_products_purchased
+    , coalesce(products_purchased.items_purchased, 0) as items_purchased
+from users
+left join user_orders
+    on user_orders.user_id = users.user_id
+left join products_purchased
+    on products_purchased.user_id = users.user_id

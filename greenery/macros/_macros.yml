@@ -1,0 +1,8 @@
+version: 2
+
+macros:
+  - name: grant
+    description: grant user access/select to schema and all tables/models
+
+  - name: sum_of
+    description: count the total number of a given value in a column

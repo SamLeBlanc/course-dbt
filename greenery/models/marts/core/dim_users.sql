@@ -1,25 +1,23 @@
 with users as (
-    select *
-    from {{ ref ('stg_postgres__users') }}
+    select * from {{ ref ('stg_postgres__users') }}
 )
 , addresses as (
-    select *
-    from {{ ref ('stg_postgres__addresses') }}
+    select * from {{ ref ('stg_postgres__addresses') }}
 )
 
 select
-      u.user_id
-	, u.first_name
-	, u.last_name
-	, u.user_email
-	, u.phone_number
-	, u.user_created_at_utc
-	, u.user_updated_at_utc
-	, u.address_id
-	, a.street_address
-	, a.zipcode
-	, a.state
-	, a.country
-from users u
-left join addresses a
-    on a.address_id = u.address_id
+    users.user_id
+	, users.first_name
+	, users.last_name
+	, users.user_email
+	, users.phone_number
+	, users.user_created_at_utc
+	, users.user_updated_at_utc
+	, users.address_id
+	, addresses.street_address
+	, addresses.zipcode
+	, addresses.state
+	, addresses.country
+from users
+left join addresses
+    on addresses.address_id = users.address_id

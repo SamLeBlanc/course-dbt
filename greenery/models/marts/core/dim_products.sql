@@ -1,6 +1,5 @@
 with products as (
-    select *
-    from {{ ref ('stg_postgres__products') }}
+    select * from {{ ref ('stg_postgres__products') }}
 )
 , product_sales as (
     select
@@ -11,11 +10,11 @@ with products as (
 )
 
 select
-    p.product_id
-	, p.product_name
-	, p.product_price
-	, p.product_inventory
+    products.product_id
+	, products.product_name
+	, products.product_price
+	, products.product_inventory
     , purchased_quantity
-from products p
-left join product_sales ps
-    on ps.product_id = p.product_id
+from products
+left join product_sales
+    on product_sales.product_id = products.product_id
