@@ -7,23 +7,30 @@ models:
       - name: user_id
         tests:
           - not_null
+
       - name: order_id
         tests:
           - not_null
+
       - name: order_created_at_utc
         tests:
           - not_null
+
       - name: product_id
         tests:
           - not_null
+
       - name: product_quantity
         tests:
           - not_null
+          
   - name: int_session_dates
     description: description
     columns:
       - name: session_id
         tests:
           - not_null
+
       - name: session_start_utc
+      
       - name: session_end_utc

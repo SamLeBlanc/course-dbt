@@ -2,12 +2,24 @@ version: 2
 
 models:
   - name: fct_user_sessions
+    description: critical information on user sessions including time and event activity
     columns:
       - name: session_id
       - name: user_id
       - name: session_start_utc
+        description: timestamp of the start of the session
+
       - name: session_end_utc
+        description: timestamp of the end of the session
+        
       - name: page_view
+        description: count of the number of page views in a given session
+
       - name: add_to_cart
+        description: count of the number of add_to_carts in a given session
+
       - name: checkout
+        description: count of the number of checkouts in a given session
+
       - name: package_shipped
+        description: boolean identifier for if the order from a given session has shipped 

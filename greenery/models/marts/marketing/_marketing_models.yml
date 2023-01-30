@@ -2,17 +2,33 @@ version: 2
 
 models:
   - name: fct_user_orders
-    description: test
+    description: critical information on orders and the user who placed them, including aggregates over all orders placed by a given user
     columns:
       - name: user_id
         tests:
           - not_null
           - unique
+          
       - name: is_buyer
+        description: boolean identifier if a user has previously made a purchase
+
       - name: is_frequent_buyer
+        description: boolean identifier if a user has made at least 3 purchases
+      
       - name: first_order_utc
+        description: timestamp of the first order placed by user 
+      
       - name: last_order_utc
+        description: timestamp of most recent order placed by user
+      
       - name: orders
+        description: total number of orders placed by user
+
       - name: spend_usd
+        description: total (in USD) spent on all orders placed by user 
+
       - name: distinct_products_purchased
+        description: number of distinct products purchased over all orders placed by user
+
       - name: items_purchased
+        description: number of products purchased over all orders placed by user

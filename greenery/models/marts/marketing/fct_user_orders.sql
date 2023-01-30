@@ -24,7 +24,7 @@ with users as (
 select
     u.user_id
     , o.orders is not null as is_buyer
-    , coalesce(o.orders, 0) >= 2 as is_frequent_buyer
+    , coalesce(o.orders, 0) >= 3 as is_frequent_buyer
     , o.first_order_utc
     , o.last_order_utc
     , o.orders
