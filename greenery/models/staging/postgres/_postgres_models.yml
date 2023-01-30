@@ -4,6 +4,7 @@ models:
   - name: stg_postgres__addresses
     description: Addresses info for each users including address, zip, state, and country.
     columns:
+      - name: address_id
       - name: street_address
       - name: zipcode
         tests: 

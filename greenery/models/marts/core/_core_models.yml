@@ -1,60 +1,68 @@
 version: 2
 
 models:
-
-  - name: int_orders
-    description: TBD
+  - name: dim_products
     columns:
-    - name: order_id
-      tests:
-        - not_null
-        - unique
-    - name: user_id
-      tests:
-          - not_null
-    - name: address_id
-      tests:
-          - not_null
-    - name: promo_desc
-    - name: order_created_at
-    - name: order_cost
-    - name: shipping_cost
-    - name: discount
-    - name: order_total
-    - name: tracking_id
-    - name: order_status
-
-  - name: int_order_items
-    description: TBD
-    columns:
-      - name: order_id
-        tests:
-          - not_null
       - name: product_id
-        tests: 
-          - not_null
-      - name: user_id
         tests:
-            - not_null
-      - name: order_created_at
-      - name: order_status
+          - not_null
+          - unique
       - name: product_name
       - name: product_price
-      - name: product_quantity
+        tests:
+          - not_null
+          - positive_values
+      - name: product_inventory
+      - name: purchased_quantity
 
   - name: dim_users
-    description: TBD
     columns:
       - name: user_id
         tests:
           - not_null
           - unique
+      - name: first_name
+      - name: last_name
       - name: user_email
-      - name: created_at
+      - name: phone_number
+      - name: user_created_at_utc
+      - name: user_updated_at_utc
       - name: address_id
-      - name: full_address
+      - name: street_address
       - name: zipcode
-      - name: state 
+      - name: state
       - name: country
-  - name: fact_orders
-  - name: fact_user_orders
+
+  - name: fct_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: user_id
+      - name: promo_desc
+      - name: discount
+      - name: status
+      - name: address_id
+      - name: street_address
+      - name: zipcode
+      - name: state
+      - name: country
+      - name: order_created_at_utc
+      - name: order_cost
+        tests:
+          - not_null
+          - positive_values
+      - name: shipping_cost
+        tests:
+          - not_null
+          - positive_values
+      - name: order_total
+        tests:
+          - not_null
+          - positive_values
+      - name: tracking_id
+      - name: shipping_service
+      - name: order_estimated_delivery_at_utc
+      - name: order_delivered_utc
+      - name: order_status

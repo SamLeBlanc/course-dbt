@@ -1,10 +1,13 @@
 version: 2
 
 models:
-  - name: fact_products
-    column: 
-      - name: product_id
-        tests:
-          - not_null
-          - unique
-  - name: fact_product_sessions_daily
+  - name: fct_user_sessions
+    columns:
+      - name: session_id
+      - name: user_id
+      - name: session_start_utc
+      - name: session_end_utc
+      - name: page_view
+      - name: add_to_cart
+      - name: checkout
+      - name: package_shipped

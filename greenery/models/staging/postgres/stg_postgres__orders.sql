@@ -15,7 +15,7 @@ with src as (
         , TRACKING_ID
         , SHIPPING_SERVICE
         , ESTIMATED_DELIVERY_AT::timestampntz as order_estimated_delivery_at_utc
-        , DELIVERED_AT::timestampntz as prder_delivered_at_utc
+        , DELIVERED_AT::timestampntz as order_delivered_utc
         , STATUS as order_status
     from src
 )

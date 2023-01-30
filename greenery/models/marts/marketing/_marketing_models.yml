@@ -1,42 +1,18 @@
 version: 2
 
 models:
-
-  - name: int_user_sessions
-    description: High-level user session information
+  - name: fct_user_orders
+    description: test
     columns:
-      - name: session_id
-        tests:
-          - not_null
       - name: user_id
         tests:
           - not_null
-      - name: order_id
-      - name: session_start
-      - name: session_end
-      - name: session_length_min
-      - name: page_views
-      - name: add_to_cart 
-      - name: checkout
-      - name: package_shipped
-
-  - name: int_user_product_sessions
-    description: High-level user session information
-    columns:
-      - name: session_id
-        tests:
-          - not_null
-      - name: user_id
-        tests:
-          - not_null
-      - name: product_id
-        tests:
-          - not_null
-      - name: order_id
-      - name: session_start
-      - name: session_end
-      - name: session_length_min
-      - name: page_views
-      - name: add_to_cart 
-      - name: checkout
-      - name: package_shipped
+          - unique
+      - name: is_buyer
+      - name: is_frequent_buyer
+      - name: first_order_utc
+      - name: last_order_utc
+      - name: orders
+      - name: spend_usd
+      - name: distinct_products_purchased
+      - name: items_purchased
